@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export DISPLAY=:0
+export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+
 battery_capacity=$(cat /sys/class/power_supply/BAT0/capacity)
 
 if [ "$battery_capacity" -lt 10 ]; then
